@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH -J itermMMikj_cilk_ij           # job name
+#SBATCH -o iterMM_ikj_cilk_ij.o%j       # output and error file name (%j expands to jobID)
+#SBATCH -n 16              # total number of mpi tasks requested
+#SBATCH -p normal     # queue (partition) -- normal, development, etc.
+#SBATCH -t 00:30:00        # run time (hh:mm:ss) - 1.5 hours
+#SBATCH --mail-user=aashray.arora@stonybrook.edu
+#SBATCH --mail-type=begin  # email me when the job starts
+#SBATCH --mail-type=end    # email me when the job finishes
+ibrun ./iter_mm_ikj_cilk_ij.o              # run the MPI executable named a.out
